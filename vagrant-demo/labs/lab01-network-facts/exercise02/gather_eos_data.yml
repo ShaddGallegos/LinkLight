@@ -1,16 +1,16 @@
 ---
 - name: GATHER INFORMATION FROM SWITCHES
-  hosts: network
+- hosts: network
   gather_facts: no
 
   tasks:
-    - name: GATHER SWITCH FACTS
-      eos_facts:
+  - name: GATHER SWITCH FACTS
+  eos_facts:
 
-    - name: DISPLAY VERSION
-      debug:
-        msg: "The EOS version is: {{ ansible_net_version }}"
+- name: DISPLAY VERSION
+  debug:
+  msg: "The EOS version is: {{ ansible_net_version }}"
 
-    - name: DISPLAY SERIAL NUMBER
-      debug:
-        msg: "The serial number is:{{ ansible_net_serialnum }}"
+- name: DISPLAY SERIAL NUMBER
+  debug:
+  msg: "The serial number is:{{ ansible_net_serialnum }}"

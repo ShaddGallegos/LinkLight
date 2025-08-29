@@ -4,12 +4,12 @@
   when: "tower_secrets"
   no_log: True
 
-# Build survey spec for job template
+    # Build survey spec for job template
 - name: "Build Ansible Tower job template survey specification"
   include_tasks: "build_job_template_survey.yml"
   with_items: "{{ tower_surveys }}"
   loop_control:
-    loop_var: "job_template"
-    label: "{{ job_template.job_template_name }}"
+  loop_var: "job_template"
+  label: "{{ job_template.job_template_name }}"
   when:
-    - "tower_surveys | length > 0"
+  - "tower_surveys | length > 0"
